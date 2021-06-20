@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        gameObject.transform.position = mousePos;
 
         if(Input.GetKeyDown(KeyCode.E))
         {
@@ -47,14 +48,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); //Create the bullet
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>(); //Get the rb of that bullet
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse); // give the bullet a trajectory and shoot
+        //GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); //Create the bullet
+        //Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>(); //Get the rb of that bullet
+        //rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse); // give the bullet a trajectory and shoot
     }
     private void Rotate()
     {
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+       // Vector2 lookDir = mousePos - rb.position;
+        //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        //rb.rotation = angle;
     }
 }
