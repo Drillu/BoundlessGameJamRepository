@@ -10,16 +10,14 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePos;
 
     public Transform firePoint;
-    public GameObject bulletPrefab;
+    public GameObject bulletArray;
     public float bulletForce = 10f;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -38,9 +36,7 @@ public class PlayerMovement : MonoBehaviour
     // Update() for physics
     private void FixedUpdate()
     {
-        Vector2 lookDir = mousePos - rb.position;
-        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
-        rb.rotation = angle;
+        Rotate();
     }
 
    
@@ -51,8 +47,14 @@ public class PlayerMovement : MonoBehaviour
 
     private void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+        GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation); //Create the bullet
+        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>(); //Get the rb of that bullet
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse); // give the bullet a trajectory and shoot
+    }
+    private void Rotate()
+    {
+        Vector2 lookDir = mousePos - rb.position;
+        float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
+        rb.rotation = angle;
     }
 }
