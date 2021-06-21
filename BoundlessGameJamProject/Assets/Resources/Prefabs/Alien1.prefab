@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 7354182942090635235}
   - component: {fileID: 3042224466604089254}
   - component: {fileID: 33426397614203099}
+  - component: {fileID: -6002774401986365727}
   m_Layer: 0
   m_Name: Alien1
   m_TagString: enemy
@@ -362,7 +363,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -382,6 +383,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 1
   isDeath: 0
+--- !u!114 &-6002774401986365727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354182942090635247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f61d9d115aa3784586ddd1ee6187e77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7354182942186183915
 GameObject:
   m_ObjectHideFlags: 0
