@@ -51,6 +51,7 @@ public class EnemyMovement : MonoBehaviour
             isMoving = false;
             isShooting = false;
             rb.velocity = Vector3.zero;
+            StartCoroutine(Boom());
         }
 
         if (gameObject.transform.position.x < End)
@@ -61,6 +62,7 @@ public class EnemyMovement : MonoBehaviour
             {
                 isShooting = true;
                 StartCoroutine(Hover());
+                StartCoroutine(Shoot());
             }
 
             else if (TYPE == 1 && isMoving == false)
@@ -126,5 +128,13 @@ public class EnemyMovement : MonoBehaviour
         Instantiate(Instances[0], transform.position, transform.rotation);
         yield return new WaitForSeconds(.2f);
         Destroy(gameObject);
+    }
+
+    private IEnumerator Shoot()
+    {
+        yield return new WaitForSeconds(1.5f);
+
+        Instantiate(Instances[1], gameObject.transform.GetChild(1).transform.position, transform.rotation);
+        StartCoroutine(Shoot());
     }
 }

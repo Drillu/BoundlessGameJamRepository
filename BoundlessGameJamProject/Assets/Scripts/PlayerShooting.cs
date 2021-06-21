@@ -8,6 +8,7 @@ public class PlayerShooting : MonoBehaviour
     public GameObject[] bulletArray;
     public GameObject Bullet;
 
+    public float firerate;
 
     private bool isPaused;
     private Bullet bulletScriptReference;
@@ -17,7 +18,7 @@ public class PlayerShooting : MonoBehaviour
     void Start()
     {
         bulletScriptReference = bulletArray[0].GetComponent<Bullet>();
-        StartCoroutine(AutoFire(bulletScriptReference.fireRate));
+        StartCoroutine(AutoFire(firerate));
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class PlayerShooting : MonoBehaviour
     {
         yield return new WaitForSeconds(fireSpd);
         Instantiate(autoBullet, transform.GetChild(0).transform.position, transform.rotation);
-        StartCoroutine(AutoFire(fireSpd));
+        StartCoroutine(AutoFire(firerate));
     }
 
     public int NextBullet(int index)

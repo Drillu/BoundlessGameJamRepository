@@ -40,9 +40,21 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.tag == "enemy")
+
+        if (gameObject.tag == "Bullet")
         {
-            other.gameObject.GetComponent<EnemyHealth>().health -= dmg;
+            if (other.gameObject.tag == "enemy")
+            {
+                other.gameObject.GetComponent<EnemyHealth>().health -= dmg;
+            }
+        }
+
+        if(gameObject.tag == "eBullet")
+        {
+            if(other.tag == "Player")
+            {
+                other.gameObject.GetComponent<BaseP>().health -= dmg;
+            }
         }
     }
 }
