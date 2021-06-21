@@ -33,6 +33,6 @@ public class Timer : MonoBehaviour
             playerShootingReference.NextBullet(bulletIndex);
         }
         
-        timer.text = countdown.ToString("00");
+        //timer.text = countdown.ToString("00");
     }
 }

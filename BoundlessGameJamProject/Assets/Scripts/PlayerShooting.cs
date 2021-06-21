@@ -10,7 +10,8 @@ public class PlayerShooting : MonoBehaviour
 
     private bool isPaused;
     private Bullet bulletScriptReference;
-    
+
+    public GameObject autoBullet;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,12 +25,19 @@ public class PlayerShooting : MonoBehaviour
         
     }
 
-    private IEnumerator AutoFire(float fireSpd)
+    private IEnumerator AbilityFire(float fireSpd)
     {
         bulletScriptReference = bulletArray[NextBullet(timerReference.bulletIndex)].GetComponent<Bullet>();
         yield return new WaitForSeconds(fireSpd);
         Instantiate(bulletArray[NextBullet(timerReference.bulletIndex)], transform.GetChild(0).transform.position, transform.rotation);
         StartCoroutine(AutoFire(bulletScriptReference.fireRate));
+    }
+
+    private IEnumerator AutoFire(float fireSpd)
+    {
+        yield return new WaitForSeconds(fireSpd);
+        Instantiate(autoBullet, transform.GetChild(0).transform.position, transform.rotation);
+        StartCoroutine(AutoFire(fireSpd));
     }
 
     public int NextBullet(int index)
