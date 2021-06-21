@@ -35,7 +35,7 @@ public class PlayerShooting : MonoBehaviour
         bulletScriptReference = bulletArray[timerReference.NextBullet(timerReference.bulletIndex)].GetComponent<Bullet>();
         yield return new WaitForSeconds(fireSpd);
         Instantiate(bulletArray[timerReference.NextBullet(timerReference.bulletIndex)], transform.GetChild(0).transform.position, transform.rotation);
-        StartCoroutine(AutoFire(bulletScriptReference.fireRate));
+        
     }
 
 
