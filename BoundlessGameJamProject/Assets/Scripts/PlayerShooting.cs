@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public Timer timerReference;
-    public GameObject[] bulletArray;
-    //public GameObject Bullet;
+    public GameObject bulletArray;
+    public GameObject Bullet;
 
     private bool isPaused;
     private Bullet bulletScriptReference;
@@ -27,11 +27,12 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator AbilityFire(float fireSpd)
     {
-        bulletScriptReference = bulletArray[NextBullet(timerReference.bulletIndex)].GetComponent<Bullet>();
+        bulletScriptReference = bulletArray[timerReference.NextBullet(timerReference.bulletIndex)].GetComponent<Bullet>();
         yield return new WaitForSeconds(fireSpd);
-        Instantiate(bulletArray[NextBullet(timerReference.bulletIndex)], transform.GetChild(0).transform.position, transform.rotation);
+        Instantiate(bulletArray[timerReference.NextBullet(timerReference.bulletIndex)], transform.GetChild(0).transform.position, transform.rotation);
         StartCoroutine(AutoFire(bulletScriptReference.fireRate));
     }
+
 
     private IEnumerator AutoFire(float fireSpd)
     {
@@ -44,4 +45,5 @@ public class PlayerShooting : MonoBehaviour
     {
         return index;
     }
+
 }
