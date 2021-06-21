@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     public Timer timerReference;
-    public GameObject bulletArray;
-    public GameObject Bullet;
+    public GameObject[] bulletArray;
+   // public GameObject Bullet;
 
     private bool isPaused;
     private Bullet bulletScriptReference;
@@ -22,7 +22,12 @@ public class PlayerShooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+
+            StartCoroutine(AbilityFire(bulletScriptReference.fireRate));
+        }
+
     }
 
     private IEnumerator AbilityFire(float fireSpd)

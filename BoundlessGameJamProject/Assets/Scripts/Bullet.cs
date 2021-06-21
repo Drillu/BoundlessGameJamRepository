@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-
+    public int timeToDelete;
     public float fireRate;
     public float spd;
     public int dmg;
@@ -26,6 +26,14 @@ public class Bullet : MonoBehaviour
         else if (TYPE == 1)
         {
             transform.position += -Vector3.right * spd;
+        }
+
+        timeToDelete --;
+        
+        
+        if(timeToDelete<=0)
+        {
+            Destroy(gameObject);
         }
         
     }

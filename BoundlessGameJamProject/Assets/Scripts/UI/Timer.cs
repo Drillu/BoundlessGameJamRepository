@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
         else
         {
             bulletIndex++;
-            if (bulletIndex == 3)
+            if (bulletIndex == 2)
             {
                 bulletIndex = 0;
             }
@@ -32,7 +32,7 @@ public class Timer : MonoBehaviour
             NextBullet(bulletIndex);
         }
         
-        //timer.text = countdown.ToString("00");
+        timer.text = countdown.ToString("00");
     }
 
     public int NextBullet(int index)

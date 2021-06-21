@@ -37,17 +37,20 @@ public class EnemyHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currHealth != health)
+        
+
+        if (currHealth != health && isDeath==false)
         {
             gameObject.transform.GetChild(0).GetComponent<EnemyHbar>().SetHealth(health, maxHealth);
             currHealth = health;
             StartCoroutine(hit());
         }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             StartCoroutine(death());
         }
+
     }
 
     private IEnumerator hit()

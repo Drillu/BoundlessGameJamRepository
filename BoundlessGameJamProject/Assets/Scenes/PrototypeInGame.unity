@@ -1319,7 +1319,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 55850909}
   firePoint: {fileID: 1226189534}
-  bulletArray: {fileID: 0}
   bulletForce: 10
 --- !u!61 &1448465056
 BoxCollider2D:
@@ -1458,7 +1457,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7bc29eac3eee344a70be1d5fb0bf59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 2639353306914428430, guid: de58416892b3c6d43a06fff875b8cc7c, type: 3}
+  timerReference: {fileID: 1971664150}
+  bulletArray:
+  - {fileID: 8045347190680658301, guid: 25e962deab3db7c4a8608888f4c763ab, type: 3}
+  - {fileID: 6635510067311737088, guid: ae555fa0d428fb849b7d0ce1294589ff, type: 3}
+  autoBullet: {fileID: 2639353306914428430, guid: de58416892b3c6d43a06fff875b8cc7c,
+    type: 3}
 --- !u!1 &1615426686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1592,7 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9235e32db1647eb4e91571dff164a773, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsToPass: 5
+  bulletIndex: 0
   timer: {fileID: 539859399}
 --- !u!1001 &1992363379
 PrefabInstance:
@@ -1605,6 +1609,11 @@ PrefabInstance:
         type: 3}
       propertyPath: health
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354182941894257687, guid: e1e93fcfba895f14489ade1d25ee70e2,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7354182941894257687, guid: e1e93fcfba895f14489ade1d25ee70e2,
         type: 3}
@@ -1670,6 +1679,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Alien1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354182942226475277, guid: e1e93fcfba895f14489ade1d25ee70e2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e1e93fcfba895f14489ade1d25ee70e2, type: 3}
