@@ -6,7 +6,8 @@ public class PlayerShooting : MonoBehaviour
 {
     public Timer timerReference;
     public GameObject[] bulletArray;
-   // public GameObject Bullet;
+    public GameObject Bullet;
+
 
     private bool isPaused;
     private Bullet bulletScriptReference;
