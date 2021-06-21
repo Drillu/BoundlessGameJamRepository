@@ -405,6 +405,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33426397614203099, guid: e1e93fcfba895f14489ade1d25ee70e2,
+        type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 33426398862866402, guid: e1e93fcfba895f14489ade1d25ee70e2,
         type: 3}
       propertyPath: Offset.y
@@ -1454,7 +1459,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bullet: {fileID: 2639353306914428430, guid: de58416892b3c6d43a06fff875b8cc7c, type: 3}
-  fireRate: 0.5
 --- !u!1 &1615426686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,6 +1554,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1971664149}
+  - component: {fileID: 1971664150}
   m_Layer: 0
   m_Name: AbilitySquare
   m_TagString: Untagged
@@ -1575,6 +1580,20 @@ Transform:
   m_Father: {fileID: 1296756194}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1971664150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971664148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9235e32db1647eb4e91571dff164a773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsToPass: 5
+  timer: {fileID: 539859399}
 --- !u!1001 &1992363379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1582,6 +1601,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 33426397614203099, guid: e1e93fcfba895f14489ade1d25ee70e2,
+        type: 3}
+      propertyPath: health
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7354182941894257687, guid: e1e93fcfba895f14489ade1d25ee70e2,
         type: 3}
       propertyPath: m_AnchorMax.y

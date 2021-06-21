@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    // Start is called before the first frame update
 
+    public float fireRate;
     public float spd;
     public int dmg;
     Rigidbody2D rgd;
@@ -27,11 +27,12 @@ public class Bullet : MonoBehaviour
         {
             transform.position += -Vector3.right * spd;
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "enemy")
+        if(other.gameObject.tag == "enemy")
         {
             other.gameObject.GetComponent<EnemyHealth>().health -= dmg;
         }

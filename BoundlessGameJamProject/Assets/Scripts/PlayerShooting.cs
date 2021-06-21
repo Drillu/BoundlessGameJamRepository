@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class PlayerShooting : MonoBehaviour
 {
-
-    public GameObject Bullet;
+    public Timer timerReference;
+    public GameObject[] bulletArray;
+    //public GameObject Bullet;
 
     private bool isPaused;
-    public float fireRate;
+    private Bullet bulletScriptReference;
+    
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(AutoFire(fireRate));
+        bulletScriptReference = bulletArray[0].GetComponent<Bullet>();
+        StartCoroutine(AutoFire(bulletScriptReference.fireRate));
     }
 
     // Update is called once per frame
@@ -23,9 +26,14 @@ public class PlayerShooting : MonoBehaviour
 
     private IEnumerator AutoFire(float fireSpd)
     {
-
+        bulletScriptReference = bulletArray[NextBullet(timerReference.bulletIndex)].GetComponent<Bullet>();
         yield return new WaitForSeconds(fireSpd);
-        Instantiate(Bullet, transform.GetChild(0).transform.position, transform.rotation);
-        StartCoroutine(AutoFire(fireRate));
+        Instantiate(bulletArray[NextBullet(timerReference.bulletIndex)], transform.GetChild(0).transform.position, transform.rotation);
+        StartCoroutine(AutoFire(bulletScriptReference.fireRate));
+    }
+
+    public int NextBullet(int index)
+    {
+        return index;
     }
 }
