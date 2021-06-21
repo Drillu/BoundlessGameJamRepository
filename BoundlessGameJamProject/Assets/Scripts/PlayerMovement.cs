@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 mousePos;
 
     public Transform firePoint;
-    public GameObject bulletArray;
+   // public GameObject bulletArray;
     public float bulletForce = 10f;
 
     void Start()
