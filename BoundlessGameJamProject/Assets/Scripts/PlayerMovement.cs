@@ -21,7 +21,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-        gameObject.transform.position = mousePos;
+        rb.MovePosition(mousePos);
+        //gameObject.transform.position = mousePos;
 
         if(Input.GetKeyDown(KeyCode.E))
         {

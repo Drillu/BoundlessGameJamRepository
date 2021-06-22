@@ -21,11 +21,13 @@ public class Bullet : MonoBehaviour
     {
         if (TYPE == 0)
         {
-            transform.position += Vector3.right * spd;
+            rgd.AddForce(Vector2.right * spd);
+            //transform.position += Vector3.right * spd;
         }
         else if (TYPE == 1)
         {
-            transform.position += -Vector3.right * spd;
+            rgd.AddForce(Vector2.left * spd);
+            //transform.position += -Vector3.right * spd;
         }
 
         timeToDelete --;
