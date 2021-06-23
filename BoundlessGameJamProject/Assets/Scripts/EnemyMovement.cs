@@ -67,7 +67,8 @@ public class EnemyMovement : MonoBehaviour
 
             else if (TYPE == 1 && isMoving == false)
             {
-                StartCoroutine(Loop());
+                //StartCoroutine(Loop());
+                StartCoroutine(Boom());
             }
         }
     }

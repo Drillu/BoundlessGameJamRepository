@@ -13,14 +13,31 @@ public class PlayerMovement : MonoBehaviour
    
     public float bulletForce = 10f;
 
+    private LineRenderer lr;
+    private Vector2 laserEnd;
+    public Transform laserOrigin;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        lr = GetComponent<LineRenderer>();
     }
 
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+
+        if(Physics2D.Raycast(laserOrigin.position,transform.right))
+        {
+            RaycastHit2D hit = Physics2D.Raycast(laserOrigin.position, transform.right);
+            Draw2DLine(laserOrigin.position,hit.point);
+        }
+        else
+        {
+            laserEnd.Set(35f,mousePos.y);
+            Draw2DLine(laserOrigin.position, laserEnd);
+        }
+       
         rb.MovePosition(mousePos);
         //gameObject.transform.position = mousePos;
 
@@ -58,5 +75,10 @@ public class PlayerMovement : MonoBehaviour
        // Vector2 lookDir = mousePos - rb.position;
         //float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg - 90f;
         //rb.rotation = angle;
+    }
+    void Draw2DLine(Vector2 origin, Vector2 end)
+    {
+        lr.SetPosition(0, origin);
+        lr.SetPosition(1, end);
     }
 }
