@@ -11,7 +11,10 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     private int maxHealth, currHealth;
 
-    public bool isDeath;
+    public float scoreToGet;
+    private Score scoreReference;
+
+    bool isDeath;
 
     Color32 hitColor;
     Color32 baseColor;
@@ -19,6 +22,7 @@ public class EnemyHealth : MonoBehaviour
     SpriteRenderer sprRen;
     void Start()
     {
+        scoreReference = GameObject.Find("LevelManager").GetComponent<Score>();
         if(TYPE == 0)
         {
             maxHealth = 25;
@@ -66,5 +70,10 @@ public class EnemyHealth : MonoBehaviour
         sprRen.color = hitColor;
         yield return new WaitForSeconds(1f);
         Destroy(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        scoreReference.scoreNumber += scoreToGet;
     }
 }
