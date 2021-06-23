@@ -27,7 +27,7 @@ public class EnemyMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         isHover = false;
 
-        if(TYPE == 0) //Shooter - shoots bullets
+        if (TYPE == 0) //Shooter - shoots bullets
         {
             isMoving = true;
             End = Random.Range(2.5f, 8f);
@@ -46,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if(healthScr.health < 0)
+        if (healthScr.health < 0)
         {
             isMoving = false;
             isShooting = false;
@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
         if (gameObject.transform.position.x < End)
         {
             isMoving = false;
-            
+
             if (TYPE == 0 && isHover == false)
             {
                 isShooting = true;
@@ -78,12 +78,12 @@ public class EnemyMovement : MonoBehaviour
 
         if (isMoving == true && (TYPE == 0 || TYPE == 1))
         {
-            
+
             rb.AddForce(Vector2.left / 2f);
         }
     }
 
-    
+
     private IEnumerator Loop()
     {
         isMoving = true;
@@ -113,7 +113,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player" && TYPE == 1)
+        if (other.tag == "Player" && TYPE == 1)
         {
             other.gameObject.GetComponent<BaseP>().health -= 25;
             if (isBoom != true)
