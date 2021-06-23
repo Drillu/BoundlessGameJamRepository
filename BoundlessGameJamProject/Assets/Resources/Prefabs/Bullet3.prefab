@@ -98,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToDelete: 1750
   fireRate: 0.7
-  spd: 0.01
+  spd: 0.1
   dmg: 10
   TYPE: 1
 --- !u!50 &3956360863003139809

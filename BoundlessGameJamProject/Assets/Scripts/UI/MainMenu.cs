@@ -30,4 +30,9 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(LoadLevel(0));
         Time.timeScale = 1f;
     }
+    public void Retry()
+    {
+        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex));
+        Time.timeScale = 1f;
+    }
 }
