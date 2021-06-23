@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private LineRenderer lr;
     private Vector2 laserEnd;
     public Transform laserOrigin;
+    public bool shootLaser = false;
 
     void Start()
     {
@@ -26,16 +27,23 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
-
-        if(Physics2D.Raycast(laserOrigin.position,transform.right))
+        if (shootLaser == true)
         {
-            RaycastHit2D hit = Physics2D.Raycast(laserOrigin.position, transform.right);
-            Draw2DLine(laserOrigin.position,hit.point);
+            lr.enabled = true;
+            if (Physics2D.Raycast(laserOrigin.position, transform.right))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(laserOrigin.position, transform.right);
+                Draw2DLine(laserOrigin.position, hit.point);
+            }
+            else
+            {
+                laserEnd.Set(35f, mousePos.y);
+                Draw2DLine(laserOrigin.position, laserEnd);
+            }
         }
         else
         {
-            laserEnd.Set(35f,mousePos.y);
-            Draw2DLine(laserOrigin.position, laserEnd);
+            lr.enabled = false;
         }
        
         rb.MovePosition(mousePos);
