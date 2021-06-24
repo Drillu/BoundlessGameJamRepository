@@ -29,10 +29,12 @@ public class PlayerMovement : MonoBehaviour
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
         if (shootLaser == true)
         {
+            
             lr.enabled = true;
             if (Physics2D.Raycast(laserOrigin.position, transform.right))
             {
                 RaycastHit2D hit = Physics2D.Raycast(laserOrigin.position, transform.right);
+                
                 Draw2DLine(laserOrigin.position, hit.point);
             }
             else

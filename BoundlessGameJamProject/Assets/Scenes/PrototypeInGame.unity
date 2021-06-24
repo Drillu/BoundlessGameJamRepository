@@ -2928,6 +2928,7 @@ MonoBehaviour:
   firePoint: {fileID: 1226189534}
   bulletForce: 10
   laserOrigin: {fileID: 1521367694}
+  shootLaser: 0
 --- !u!61 &1448465056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3104,7 +3105,7 @@ LineRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1448465054}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

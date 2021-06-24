@@ -21,6 +21,9 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isBoom;
 
+    public float lerpValue;
+    private GameObject lerpGO;
+
     public GameObject[] Instances;
     void Start()
     {
@@ -41,6 +44,12 @@ public class EnemyMovement : MonoBehaviour
         {
 
         }
+        else if(TYPE==3) // Leecher
+        {
+            isMoving = true;
+            End = Random.Range(-15f, -11f);
+        }
+        
         healthScr = gameObject.GetComponent<EnemyHealth>();
     }
 
@@ -70,16 +79,21 @@ public class EnemyMovement : MonoBehaviour
                 //StartCoroutine(Loop());
                 StartCoroutine(Boom());
             }
+            
         }
     }
 
     void FixedUpdate()
     {
 
-        if (isMoving == true && (TYPE == 0 || TYPE == 1))
+        if (isMoving == true /*&& (TYPE == 0 || TYPE == 1)*/)
         {
 
             rb.AddForce(Vector2.left / 2f);
+        }
+        else if (TYPE == 3 && isMoving == false)
+        {
+            rb.MovePosition(Vector2.Lerp(transform.position, lerpGO.transform.position, lerpValue));
         }
     }
 
@@ -120,6 +134,13 @@ public class EnemyMovement : MonoBehaviour
             {
                 StartCoroutine(Boom());
             }
+        }
+        if(other.tag == "Player"&&TYPE == 3)
+        {
+            isMoving = false;
+            //rb.velocity = Vector2.zero;
+            lerpGO = GameObject.Find("Player");
+            
         }
     }
 
