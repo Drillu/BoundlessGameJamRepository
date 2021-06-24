@@ -31,13 +31,13 @@ public class BaseP : MonoBehaviour
         health = maxHealth; //sets game health to max health
         currHealth = health; //sets the health checker to health
 
-<<<<<<< Updated upstream
+
         hbar.SetMaxHealth(maxHealth);
 
         playerAnim = GetComponent<Animator>();
-=======
+
         hbar.SetMaxHealth(maxHealth); //sets the min, max, and current health values for the healthbar
->>>>>>> Stashed changes
+
     }
 
     // Update is called once per frame
