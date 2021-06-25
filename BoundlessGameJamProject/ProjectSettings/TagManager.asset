@@ -10,6 +10,7 @@ TagManager:
   - eBullet
   - start
   - end
+  - Lockable
   layers:
   - Default
   - TransparentFX

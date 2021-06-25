@@ -207,9 +207,10 @@ GameObject:
   - component: {fileID: 29406055}
   - component: {fileID: 29406054}
   - component: {fileID: 29406053}
+  - component: {fileID: 29406056}
   m_Layer: 5
   m_Name: Nuclear
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,6 +316,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29406051}
   m_CullTransparentMesh: 0
+--- !u!114 &29406056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 29406051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Nuclear: '
+  Info: Increases the Damage of each Nuclear Missile
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 25000
+  Level: 1
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &37399891
 GameObject:
   m_ObjectHideFlags: 0
@@ -327,9 +352,10 @@ GameObject:
   - component: {fileID: 37399895}
   - component: {fileID: 37399894}
   - component: {fileID: 37399893}
+  - component: {fileID: 37399896}
   m_Layer: 5
   m_Name: Wmd
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -435,6 +461,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 37399891}
   m_CullTransparentMesh: 0
+--- !u!114 &37399896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 37399891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'WMD: '
+  Info: Increases the Tick-Damage of the WMD
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 25000
+  Level: 1
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &63222978
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,7 +632,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 9999
+  m_Text: 
 --- !u!222 &63921981
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -677,6 +727,7 @@ GameObject:
   - component: {fileID: 114566950}
   - component: {fileID: 114566949}
   - component: {fileID: 114566948}
+  - component: {fileID: 114566951}
   m_Layer: 5
   m_Name: Missile
   m_TagString: Untagged
@@ -785,6 +836,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114566946}
   m_CullTransparentMesh: 0
+--- !u!114 &114566951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 114566946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Missile: '
+  Info: Increases the Damage of each Missile
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 1000
+  Level: 1
+  Unlock: {fileID: 1024091791}
+  isLocked: 0
 --- !u!1 &115715437
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,8 +1077,12 @@ MonoBehaviour:
   - {fileID: 63921980}
   Name: 'Health: '
   Info: Increases your Base Health
+  lockedName: 
   LevelCap: 100
   BaseCost: 500
+  Level: 0
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &162929073
 GameObject:
   m_ObjectHideFlags: 0
@@ -1168,9 +1247,10 @@ GameObject:
   - component: {fileID: 196853668}
   - component: {fileID: 196853667}
   - component: {fileID: 196853666}
+  - component: {fileID: 196853669}
   m_Layer: 5
   m_Name: Gatling
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1276,6 +1356,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 196853664}
   m_CullTransparentMesh: 0
+--- !u!114 &196853669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196853664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Gatling: '
+  Info: Increases the Damage of each Bullet
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 5000
+  Level: 1
+  Unlock: {fileID: 1527005075}
+  isLocked: 0
 --- !u!1 &220322878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,9 +1540,10 @@ GameObject:
   - component: {fileID: 310900869}
   - component: {fileID: 310900868}
   - component: {fileID: 310900867}
+  - component: {fileID: 310900870}
   m_Layer: 5
   m_Name: Stunner
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1544,6 +1649,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310900865}
   m_CullTransparentMesh: 0
+--- !u!114 &310900870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310900865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Stunner: '
+  Info: 'Increases the Stun Effect: '
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 5000
+  Level: 1
+  Unlock: {fileID: 758925400}
+  isLocked: 0
 --- !u!1 &315306072
 GameObject:
   m_ObjectHideFlags: 0
@@ -1871,12 +2000,12 @@ RectTransform:
   m_Children:
   - {fileID: 517526284}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 278, y: 333}
-  m_SizeDelta: {x: 75, y: 75}
+  m_AnchoredPosition: {x: 285, y: 334.62}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &434787557
 MonoBehaviour:
@@ -1897,7 +2026,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 32129126218832542ba51ace52752c95, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2105,7 +2234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 219.6, y: 0}
+  m_AnchoredPosition: {x: 209, y: 0}
   m_SizeDelta: {x: 336.35822, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517526285
@@ -2140,7 +2269,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 9999
+  m_Text: 
 --- !u!222 &517526286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2613,7 +2742,7 @@ RectTransform:
   - {fileID: 1098111489}
   - {fileID: 403062638}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2880,8 +3009,12 @@ MonoBehaviour:
   - {fileID: 63921980}
   Name: 'Power: '
   Info: Increases the Damage of the Basic Autofire
+  lockedName: 
   LevelCap: 25
   BaseCost: 500
+  Level: 0
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &755265466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2968,9 +3101,10 @@ GameObject:
   - component: {fileID: 758925404}
   - component: {fileID: 758925403}
   - component: {fileID: 758925402}
+  - component: {fileID: 758925405}
   m_Layer: 5
   m_Name: EMP
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3076,6 +3210,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758925400}
   m_CullTransparentMesh: 0
+--- !u!114 &758925405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758925400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'EMP: '
+  Info: Increases Knockback, Stun, and Damage
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 25000
+  Level: 1
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &786552313
 GameObject:
   m_ObjectHideFlags: 0
@@ -3233,7 +3391,7 @@ GameObject:
   - component: {fileID: 821068871}
   - component: {fileID: 821068870}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: PlayAgain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3252,7 +3410,7 @@ RectTransform:
   m_Children:
   - {fileID: 1036625361}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3634,7 +3792,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Basic info on the upgrade
+  m_Text: 
 --- !u!222 &866819682
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3751,7 +3909,7 @@ RectTransform:
   - {fileID: 1032218992}
   - {fileID: 1491163990}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3770,9 +3928,10 @@ GameObject:
   - component: {fileID: 1024091795}
   - component: {fileID: 1024091794}
   - component: {fileID: 1024091793}
+  - component: {fileID: 1024091796}
   m_Layer: 5
   m_Name: ICBM
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3878,6 +4037,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1024091791}
   m_CullTransparentMesh: 0
+--- !u!114 &1024091796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024091791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'ICBM: '
+  Info: Increases the Damage of each ICBM
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 5000
+  Level: 0
+  Unlock: {fileID: 29406051}
+  isLocked: 0
 --- !u!1 &1030893643
 GameObject:
   m_ObjectHideFlags: 0
@@ -4232,7 +4415,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Power: Lvl 1'
+  m_Text: 
 --- !u!222 &1068330744
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4401,6 +4584,7 @@ GameObject:
   - component: {fileID: 1134740524}
   - component: {fileID: 1134740523}
   - component: {fileID: 1134740522}
+  - component: {fileID: 1134740525}
   m_Layer: 5
   m_Name: BuyButton
   m_TagString: Untagged
@@ -4509,6 +4693,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134740520}
   m_CullTransparentMesh: 0
+--- !u!114 &1134740525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134740520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217d41a7b2ac64049943d670a5354470, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reference: {fileID: 0}
+  MoneyText: {fileID: 517526285}
 --- !u!1 &1137405537
 GameObject:
   m_ObjectHideFlags: 0
@@ -5152,6 +5350,7 @@ GameObject:
   - component: {fileID: 1314419923}
   - component: {fileID: 1314419922}
   - component: {fileID: 1314419921}
+  - component: {fileID: 1314419924}
   m_Layer: 5
   m_Name: Sniper
   m_TagString: Untagged
@@ -5260,6 +5459,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314419919}
   m_CullTransparentMesh: 0
+--- !u!114 &1314419924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314419919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Sniper: '
+  Info: Increases the Damage of each Bullet
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 1000
+  Level: 1
+  Unlock: {fileID: 1636477629}
+  isLocked: 0
 --- !u!1 &1344979198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5273,7 +5496,7 @@ GameObject:
   - component: {fileID: 1344979201}
   - component: {fileID: 1344979200}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5292,7 +5515,7 @@ RectTransform:
   m_Children:
   - {fileID: 1288895024}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5341,7 +5564,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1344979201}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 102900000, guid: 3e296bf4f72220542bdf12d497c0768d, type: 3}
+        m_MethodName: set_name
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1344979201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5765,9 +5999,10 @@ GameObject:
   - component: {fileID: 1487142507}
   - component: {fileID: 1487142506}
   - component: {fileID: 1487142505}
+  - component: {fileID: 1487142508}
   m_Layer: 5
   m_Name: Cluster
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5873,6 +6108,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487142503}
   m_CullTransparentMesh: 0
+--- !u!114 &1487142508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487142503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Cluster: '
+  Info: Increases the Damage of each Cluster
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 5000
+  Level: 1
+  Unlock: {fileID: 1517696777}
+  isLocked: 0
 --- !u!1 &1491163989
 GameObject:
   m_ObjectHideFlags: 0
@@ -6019,6 +6278,7 @@ GameObject:
   - component: {fileID: 1505664147}
   - component: {fileID: 1505664146}
   - component: {fileID: 1505664150}
+  - component: {fileID: 1505664151}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -6099,12 +6359,12 @@ RectTransform:
   m_Children:
   - {fileID: 1016004582}
   - {fileID: 709120054}
+  - {fileID: 667238496}
   - {fileID: 1016248118}
   - {fileID: 434787556}
   - {fileID: 1344979199}
   - {fileID: 821068869}
   - {fileID: 1734387435}
-  - {fileID: 667238496}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6126,6 +6386,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MODE: 0
+--- !u!114 &1505664151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505664145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbf908c040913664f96bc38b55f82d01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  btns:
+  - {fileID: 1344979200}
+  - {fileID: 821068870}
 --- !u!1 &1517696777
 GameObject:
   m_ObjectHideFlags: 0
@@ -6138,9 +6413,10 @@ GameObject:
   - component: {fileID: 1517696781}
   - component: {fileID: 1517696780}
   - component: {fileID: 1517696779}
+  - component: {fileID: 1517696782}
   m_Layer: 5
   m_Name: MultiNade
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6246,6 +6522,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1517696777}
   m_CullTransparentMesh: 0
+--- !u!114 &1517696782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517696777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'MultiNade: '
+  Info: Increases the Damage of each MultiNade
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 25000
+  Level: 1
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &1521158495
 GameObject:
   m_ObjectHideFlags: 0
@@ -6258,6 +6558,7 @@ GameObject:
   - component: {fileID: 1521158499}
   - component: {fileID: 1521158498}
   - component: {fileID: 1521158497}
+  - component: {fileID: 1521158500}
   m_Layer: 5
   m_Name: Force
   m_TagString: Untagged
@@ -6366,6 +6667,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1521158495}
   m_CullTransparentMesh: 0
+--- !u!114 &1521158500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1521158495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Force: '
+  Info: Increases the Knockback
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 1000
+  Level: 1
+  Unlock: {fileID: 310900865}
+  isLocked: 0
 --- !u!1 &1524683240
 GameObject:
   m_ObjectHideFlags: 0
@@ -6456,9 +6781,10 @@ GameObject:
   - component: {fileID: 1527005079}
   - component: {fileID: 1527005078}
   - component: {fileID: 1527005077}
+  - component: {fileID: 1527005080}
   m_Layer: 5
   m_Name: Barrage
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6564,6 +6890,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527005075}
   m_CullTransparentMesh: 0
+--- !u!114 &1527005080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527005075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Barrage: '
+  Info: Increases the Damage of each bullet
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 25000
+  Level: 1
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &1548348348
 GameObject:
   m_ObjectHideFlags: 0
@@ -6728,9 +7078,10 @@ GameObject:
   - component: {fileID: 1636477633}
   - component: {fileID: 1636477632}
   - component: {fileID: 1636477631}
+  - component: {fileID: 1636477634}
   m_Layer: 5
   m_Name: Lazer
-  m_TagString: Untagged
+  m_TagString: Lockable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6836,6 +7187,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1636477629}
   m_CullTransparentMesh: 0
+--- !u!114 &1636477634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1636477629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Lazer: '
+  Info: Increases the Damage of each Lazer
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 5000
+  Level: 1
+  Unlock: {fileID: 37399891}
+  isLocked: 0
 --- !u!1 &1641336117
 GameObject:
   m_ObjectHideFlags: 0
@@ -6848,6 +7223,7 @@ GameObject:
   - component: {fileID: 1641336121}
   - component: {fileID: 1641336120}
   - component: {fileID: 1641336119}
+  - component: {fileID: 1641336122}
   m_Layer: 5
   m_Name: Mounted
   m_TagString: Untagged
@@ -6956,6 +7332,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1641336117}
   m_CullTransparentMesh: 0
+--- !u!114 &1641336122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1641336117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Mounted: '
+  Info: Increases the Damage of each Bullet
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 1000
+  Level: 1
+  Unlock: {fileID: 196853664}
+  isLocked: 0
 --- !u!1 &1682593905
 GameObject:
   m_ObjectHideFlags: 0
@@ -7243,8 +7643,12 @@ MonoBehaviour:
   - {fileID: 63921980}
   Name: 'Speed: '
   Info: Increases the Firerate of the Basic Autofire
+  lockedName: 
   LevelCap: 25
   BaseCost: 500
+  Level: 0
+  Unlock: {fileID: 0}
+  isLocked: 0
 --- !u!1 &1734387434
 GameObject:
   m_ObjectHideFlags: 0
@@ -7276,7 +7680,7 @@ RectTransform:
   - {fileID: 1068330742}
   - {fileID: 866819680}
   m_Father: {fileID: 1505664149}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7369,6 +7773,7 @@ GameObject:
   - component: {fileID: 1769263589}
   - component: {fileID: 1769263588}
   - component: {fileID: 1769263587}
+  - component: {fileID: 1769263590}
   m_Layer: 5
   m_Name: Bomb
   m_TagString: Untagged
@@ -7477,6 +7882,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1769263585}
   m_CullTransparentMesh: 0
+--- !u!114 &1769263590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769263585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 465e532617e6fa94b9b29c8c801467cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text:
+  - {fileID: 1068330743}
+  - {fileID: 866819681}
+  - {fileID: 63921980}
+  Name: 'Bomb: '
+  Info: Increases the Damage of each Bomb
+  lockedName: 
+  LevelCap: 10
+  BaseCost: 1000
+  Level: 1
+  Unlock: {fileID: 1487142503}
+  isLocked: 0
 --- !u!1 &1821286950
 GameObject:
   m_ObjectHideFlags: 0
@@ -8729,5 +9158,9 @@ MonoBehaviour:
   - {fileID: 63921980}
   Name: 'Crit: '
   Info: Increases the Crit Chance of the Basic Autofire
+  lockedName: 
   LevelCap: 25
   BaseCost: 500
+  Level: 0
+  Unlock: {fileID: 0}
+  isLocked: 0
