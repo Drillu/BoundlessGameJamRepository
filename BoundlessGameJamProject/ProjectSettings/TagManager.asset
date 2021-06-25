@@ -8,6 +8,8 @@ TagManager:
   - enemy
   - Spawner
   - eBullet
+  - start
+  - end
   layers:
   - Default
   - TransparentFX
