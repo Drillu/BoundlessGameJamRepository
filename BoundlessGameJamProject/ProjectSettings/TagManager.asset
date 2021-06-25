@@ -11,6 +11,9 @@ TagManager:
   - start
   - end
   - Lockable
+  - WMD
+  - Rocket
+  - Bomb
   layers:
   - Default
   - TransparentFX

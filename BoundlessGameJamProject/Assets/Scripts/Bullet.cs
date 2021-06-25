@@ -8,12 +8,26 @@ public class Bullet : MonoBehaviour
     public float fireRate;
     public float spd;
     public int dmg;
+    public float crit;
     Rigidbody2D rgd;
 
     public int TYPE;  //0 = Player, 1 = Enemy, 
     void Start()
     {
         rgd = gameObject.GetComponent<Rigidbody2D>();
+
+        crit = PlayerPrefs.GetInt("crit") - 1;
+        float i = Random.Range(0, 100);
+        if(i > crit)
+        {
+            dmg = dmg + ((PlayerPrefs.GetInt("Power") * 2) - 2);
+        }
+        else
+        {
+            dmg = (dmg + ((PlayerPrefs.GetInt("Power") * 2) - 2)) * 2;
+        }
+
+        
     }
 
     // Update is called once per frame
