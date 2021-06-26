@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class BasicBullet : MonoBehaviour
 {
     public int speed;
     public float cooldown;
     public int dmg;
+
+    public int timeToDelete;
 
     public int TYPE;
 
@@ -22,6 +24,9 @@ public class BasicBullet : MonoBehaviour
     Vector3 trans;
 
     bool isBomb = false;
+    bool isLazer = false;
+
+    public Sprite LOGO;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,18 +38,48 @@ public class BasicBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rgd.velocity = Vector2.right * speed;
+        if (TYPE != 10)
+        {
+            rgd.velocity = Vector2.right * speed;
+        }
         
         Dist += Vector3.Distance(transform.position, trans);
         trans = transform.position;
 
-        if(TYPE == 4)
+
+        timeToDelete--;
+
+        if(TYPE == 11 && isLazer == false)
+        {
+            StartCoroutine(WMD());
+        }
+
+
+        if (timeToDelete <= 0)
+        {
+            Destroy(gameObject);
+        }
+
+        if(TYPE == 10 && isBomb == false)
+        {
+            StartCoroutine(newBomb());
+        }
+
+        if (TYPE == 4 || TYPE == 7 || TYPE == 8)
         {
             if(Dist > 7f)
             {
-                if(isBomb == false)
+                if(isBomb == false && TYPE == 4)
                 {
                     StartCoroutine(Bomb());
+                }
+                else if (isBomb == false && TYPE == 7)
+                {
+                    StartCoroutine(Cluster());
+                }
+                else if (isBomb == false && TYPE == 8)
+                {
+                    StartCoroutine(Multi());
                 }
             }
         }
@@ -115,6 +150,83 @@ public class BasicBullet : MonoBehaviour
         }
         Instantiate(Instances[0], transform.position, transform.rotation);
         yield return new WaitForSeconds(.01f);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator Cluster()
+    {
+        isBomb = true;
+
+        foreach (GameObject Enemy in transform.GetChild(0).GetComponent<Radius>().points)
+        {
+            Enemy.GetComponent<EnemyHealth>().health -= dmg;
+        }
+        Instantiate(Instances[0], transform.position, transform.rotation);
+        yield return new WaitForSeconds(.01f);
+
+        Instantiate(Instances[1], new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x + 1, transform.position.y - 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x - 1, transform.position.y - 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+
+        Destroy(gameObject);
+
+
+    }
+
+    private IEnumerator Multi()
+    {
+        isBomb = true;
+
+        foreach (GameObject Enemy in transform.GetChild(0).GetComponent<Radius>().points)
+        {
+            Enemy.GetComponent<EnemyHealth>().health -= dmg;
+        }
+        Instantiate(Instances[0], transform.position, transform.rotation);
+        yield return new WaitForSeconds(.01f);
+
+        Instantiate(Instances[1], new Vector3(transform.position.x, transform.position.y + 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x + 1, transform.position.y - 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x - 1, transform.position.y - 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x, transform.position.y - 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x + 1, transform.position.y + 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Instantiate(Instances[1], new Vector3(transform.position.x - 1, transform.position.y + 1, transform.position.z), transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Destroy(gameObject);
+    }
+
+    private IEnumerator newBomb()
+    {
+        isBomb = true;
+        rgd.velocity = Vector3.zero;
+        yield return new WaitForSeconds(.5f);
+        foreach (GameObject Enemy in transform.GetChild(0).GetComponent<Radius>().points)
+        {
+            Enemy.GetComponent<EnemyHealth>().health -= dmg;
+        }
+        Instantiate(Instances[0], transform.position, transform.rotation);
+        yield return new WaitForSeconds(.01f);
+        Destroy(gameObject);
+
+    }
+
+    private IEnumerator WMD()
+    {
+        isLazer = true;
+
+        foreach (GameObject Enemy in transform.GetChild(0).GetComponent<Radius>().points)
+        {
+            Enemy.GetComponent<EnemyHealth>().health -= dmg;
+        }
+
+        yield return new WaitForSeconds(.2f);
         Destroy(gameObject);
     }
 }

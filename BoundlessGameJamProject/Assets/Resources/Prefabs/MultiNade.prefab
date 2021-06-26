@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8421015648099934102}
   - component: {fileID: 9089627280026314468}
+  - component: {fileID: 6743583129627174786}
   m_Layer: 0
   m_Name: GameObject (2)
   m_TagString: Untagged
@@ -47,6 +48,19 @@ CircleCollider2D:
   m_Offset: {x: 2.0516198, y: 0}
   serializedVersion: 2
   m_Radius: 2.5516198
+--- !u!114 &6743583129627174786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5477637178065549787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd1eee2089e032449a2e4b49ae450ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &7264619518192576210
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,9 +157,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00961af4fbe6a1040a68c840c072bd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  cooldown: 2
-  TYPE: 0
+  speed: 5
+  cooldown: 1.5
+  dmg: 40
+  timeToDelete: 2000
+  TYPE: 8
+  Instances:
+  - {fileID: 8525889228253775636, guid: 9ead727ac640ffc4a874851a3162820d, type: 3}
+  - {fileID: 7615547825361394009, guid: 28b65e2bf61516f43b6d90269b2e76bc, type: 3}
+  Dist: 0
+  LOGO: {fileID: 21300000, guid: 450cf91ebe07cc14a84b8dc52bafb0a2, type: 3}
 --- !u!50 &4873896831535565714
 Rigidbody2D:
   serializedVersion: 4

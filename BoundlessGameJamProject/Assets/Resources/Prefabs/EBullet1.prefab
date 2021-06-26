@@ -99,7 +99,7 @@ MonoBehaviour:
   timeToDelete: 2000
   fireRate: 0.2
   spd: 5
-  dmg: 5
+  dmg: 10
   crit: 0
   TYPE: 1
 --- !u!50 &5055242968925114681

@@ -125,9 +125,11 @@ MonoBehaviour:
   speed: 8
   cooldown: 3
   dmg: 25
+  timeToDelete: 2000
   TYPE: 5
   Instances: []
   Dist: 0
+  LOGO: {fileID: 21300000, guid: 6a078efa300ec6a49b30f39025f2d9c1, type: 3}
 --- !u!50 &5411344561968724473
 Rigidbody2D:
   serializedVersion: 4

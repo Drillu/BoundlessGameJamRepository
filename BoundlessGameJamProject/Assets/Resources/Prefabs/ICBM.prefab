@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1902725307445320824}
   - component: {fileID: 3290412425828233558}
+  - component: {fileID: 5238069381815097615}
   m_Layer: 0
   m_Name: ExplosionRadius (1)
   m_TagString: Untagged
@@ -47,6 +48,19 @@ CircleCollider2D:
   m_Offset: {x: 1.8684578, y: 0}
   serializedVersion: 2
   m_Radius: 1.8769855
+--- !u!114 &5238069381815097615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4346773710704107302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd1eee2089e032449a2e4b49ae450ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []
 --- !u!1 &6258939409078715525
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,9 +184,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00961af4fbe6a1040a68c840c072bd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 7
   cooldown: 2
-  TYPE: 0
+  dmg: 30
+  timeToDelete: 2000
+  TYPE: 1
+  Instances:
+  - {fileID: 8525889228253775636, guid: 9ead727ac640ffc4a874851a3162820d, type: 3}
+  Dist: 0
+  LOGO: {fileID: 21300000, guid: 0d88bafdc45e9cb4cb9cee0d89f62699, type: 3}
 --- !u!50 &205902446404530097
 Rigidbody2D:
   serializedVersion: 4

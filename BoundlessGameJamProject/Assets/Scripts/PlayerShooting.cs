@@ -22,6 +22,8 @@ public class PlayerShooting : MonoBehaviour
 
     float cooldown = 3f;
     bool isReady = true;
+
+    public Image SetIcon;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +33,7 @@ public class PlayerShooting : MonoBehaviour
 
         isChecked = false;
         random = 0;
-
+        
     }
 
     // Update is called once per frame
@@ -162,8 +164,8 @@ public class PlayerShooting : MonoBehaviour
         {
             Bullet = bulletArray[3];
         }
-        
 
+        SetIcon.sprite = Bullet.GetComponent<BasicBullet>().LOGO;
         yield return new WaitForSeconds(15f);
 
         Debug.Log("hit");

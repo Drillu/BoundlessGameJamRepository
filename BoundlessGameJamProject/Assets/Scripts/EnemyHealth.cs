@@ -11,7 +11,7 @@ public class EnemyHealth : MonoBehaviour
     public int health;
     private int maxHealth, currHealth;
 
-    public float scoreToGet;
+    public int scoreToGet;
     private Score scoreReference;
 
     bool isDeath;
@@ -25,9 +25,19 @@ public class EnemyHealth : MonoBehaviour
         scoreReference = GameObject.Find("LevelManager").GetComponent<Score>();
         if(TYPE == 0)
         {
-            maxHealth = 25;
+            maxHealth = 50;
             health = maxHealth;
             currHealth = health;
+        }
+        else if (TYPE == 1)
+        {
+            maxHealth = 100;
+            health = maxHealth;
+            currHealth = health;
+        }
+        else if (TYPE == 150)
+        {
+
         }
 
         sprRen = gameObject.GetComponent<SpriteRenderer>();

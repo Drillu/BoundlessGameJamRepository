@@ -22,7 +22,7 @@ public class Buy : MonoBehaviour
         me = gameObject.GetComponent<Button>();
         me.onClick.AddListener(BuyFunc);
 
-        Money = 9999999;
+        Money = PlayerPrefs.GetInt("Currency");
         MoneyText.text = Money + "";
     }
 
@@ -43,7 +43,9 @@ public class Buy : MonoBehaviour
             if(Money >= cost && (PlayerPrefs.GetInt(refName) < (buttonScr.LevelCap + 1)))
             {
                 PlayerPrefs.SetInt(refName, PlayerPrefs.GetInt(refName) + 1);
-                Money = Money - cost;
+                PlayerPrefs.SetFloat("Currency", PlayerPrefs.GetInt("Currency") - cost);
+
+                Money = PlayerPrefs.GetInt("Currency");
                 MoneyText.text = Money + "";
                 buttonScr.buymenu();
             }

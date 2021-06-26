@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour
         float i = Random.Range(0, 100);
         if(i > crit)
         {
-            dmg = dmg + ((PlayerPrefs.GetInt("Power") * 1) - 2);
+            dmg = dmg + (((PlayerPrefs.GetInt("Power") * 1)/2) - 2);
         }
         else
         {

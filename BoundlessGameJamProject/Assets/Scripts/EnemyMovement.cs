@@ -148,7 +148,7 @@ public class EnemyMovement : MonoBehaviour
     {
         isBoom = true;
         Instantiate(Instances[0], transform.position, transform.rotation);
-        yield return new WaitForSeconds(.2f);
+        yield return new WaitForSeconds(.01f);
         Destroy(gameObject);
     }
 

@@ -122,9 +122,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00961af4fbe6a1040a68c840c072bd14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  cooldown: 2
-  TYPE: 0
+  speed: 10
+  cooldown: 0.03
+  dmg: 15
+  timeToDelete: 2000
+  TYPE: 2
+  Instances: []
+  Dist: 0
+  LOGO: {fileID: 21300000, guid: f747c8c13a6d2c246881d6e989135e54, type: 3}
 --- !u!50 &2417027121106428092
 Rigidbody2D:
   serializedVersion: 4
