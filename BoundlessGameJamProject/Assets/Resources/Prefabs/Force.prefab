@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1615846074670880053}
   - component: {fileID: 8505286062678020738}
   - component: {fileID: 2019093916765889456}
+  - component: {fileID: 1071673274468218192}
+  - component: {fileID: 5773082677567980915}
   m_Layer: 0
   m_Name: Force
   m_TagString: Stun
@@ -108,3 +110,39 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.4681965, y: 1.3474026}
   m_EdgeRadius: 0
+--- !u!114 &1071673274468218192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967557831095000219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00961af4fbe6a1040a68c840c072bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  cooldown: 3
+  TYPE: 0
+--- !u!50 &5773082677567980915
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967557831095000219}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6

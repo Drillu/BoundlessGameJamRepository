@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1685100089721534269}
   - component: {fileID: 1685100089721534268}
   - component: {fileID: 8513368842202276331}
+  - component: {fileID: 1032520684537564047}
+  - component: {fileID: 5510695582406370728}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -109,6 +111,45 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.21485144, y: 0.059580326}
   m_EdgeRadius: 0
+--- !u!114 &1032520684537564047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685100089721534243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00961af4fbe6a1040a68c840c072bd14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
+  cooldown: 2
+  dmg: 20
+  TYPE: 1
+  Instances:
+  - {fileID: 2076420654923355370, guid: 9fed587bc5841d94ab5fc0cd75c06179, type: 3}
+--- !u!50 &5510695582406370728
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685100089721534243}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
 --- !u!1 &2276399004789352417
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2667437874997223151}
   - component: {fileID: 8337474638931862074}
+  - component: {fileID: 8072925391495825122}
   m_Layer: 0
   m_Name: ExplosionRadius
   m_TagString: Untagged
@@ -150,9 +192,22 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.22590613, y: 0}
   serializedVersion: 2
   m_Radius: 0.72590613
+--- !u!114 &8072925391495825122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2276399004789352417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0dd1eee2089e032449a2e4b49ae450ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  points: []

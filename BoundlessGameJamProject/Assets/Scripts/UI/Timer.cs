@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    private float countdown=5f;
+    private float countdown=15f;
     public int bulletIndex = 0;
     public Text timer;
 
@@ -28,7 +28,7 @@ public class Timer : MonoBehaviour
             {
                 bulletIndex = 0;
             }
-            countdown += 5f;
+            countdown += 15f;
             NextBullet(bulletIndex);
         }
         

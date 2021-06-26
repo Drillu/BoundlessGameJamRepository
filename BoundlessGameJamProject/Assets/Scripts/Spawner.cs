@@ -7,8 +7,8 @@ public class Spawner : MonoBehaviour
     public GameObject[] enemy;
     float randY,randX;
     Vector2 whereToSpawn;
-    public float spawnRate = 2f;
-    float nextSpawn = 0.5f;
+    public float spawnRate = 3f;
+    float nextSpawn = 0.25f;
     public GameObject[] bosses;
 
     float i;
@@ -16,9 +16,14 @@ public class Spawner : MonoBehaviour
 
     public bool isBossTime = false;
 
+    private void Start()
+    {
+        StartCoroutine(incr());
+    }
+
     void Update()
     {
-        if(Time.time > nextSpawn && isBossTime==false)
+        if(Time.time > nextSpawn)
         {
             nextSpawn = Time.time + spawnRate;
             randX = Random.Range(12f, 18f);
@@ -30,9 +35,26 @@ public class Spawner : MonoBehaviour
 
             Instantiate(enemy[j], whereToSpawn, Quaternion.identity);
         }
+
+
     }
     public void SpawnBoss(int index)
     {
         Instantiate(bosses[index], whereToSpawn, Quaternion.identity);
+    }
+
+    private IEnumerator incr()
+    {
+        if(spawnRate > .6f)
+        {
+            spawnRate -= .25f;
+        }
+        else
+        {
+            spawnRate = .5f;
+        }
+
+        yield return new WaitForSeconds(10);
+        StartCoroutine(incr());
     }
 }
