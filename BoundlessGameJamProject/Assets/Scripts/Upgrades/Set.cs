@@ -11,7 +11,7 @@ public class Set : MonoBehaviour
     void Start()
     {
         btns[0].GetComponent<Button>().onClick.AddListener(Menu);
-        btns[0].GetComponent<Button>().onClick.AddListener(PlayAgain);
+        btns[1].GetComponent<Button>().onClick.AddListener(PlayAgain);
     }
 
     // Update is called once per frame

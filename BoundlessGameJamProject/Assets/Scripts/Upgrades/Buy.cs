@@ -15,12 +15,13 @@ public class Buy : MonoBehaviour
 
     public Text MoneyText;
 
+    bool isBuy = false;
+
     btn buttonScr;
     // Start is called before the first frame update
     void Start()
     {
         me = gameObject.GetComponent<Button>();
-        me.onClick.AddListener(BuyFunc);
 
         Money = PlayerPrefs.GetInt("Currency");
         MoneyText.text = Money + "";
@@ -29,10 +30,13 @@ public class Buy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(isBuy == true && Input.GetKeyDown(KeyCode.E))
+        {
+            StartCoroutine(BuyFunc());
+        }
     }
 
-    private void BuyFunc()
+    private IEnumerator BuyFunc()
     {
         if(reference != null)
         {
@@ -43,12 +47,24 @@ public class Buy : MonoBehaviour
             if(Money >= cost && (PlayerPrefs.GetInt(refName) < (buttonScr.LevelCap + 1)))
             {
                 PlayerPrefs.SetInt(refName, PlayerPrefs.GetInt(refName) + 1);
-                PlayerPrefs.SetFloat("Currency", PlayerPrefs.GetInt("Currency") - cost);
+                PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") - cost);
 
                 Money = PlayerPrefs.GetInt("Currency");
                 MoneyText.text = Money + "";
                 buttonScr.buymenu();
             }
         }
+
+        yield return new WaitForSeconds(.4f);
+    }
+
+    public void buy()
+    {
+        isBuy = true;
+    }
+
+    public void buyOut()
+    {
+        isBuy = false;
     }
 }

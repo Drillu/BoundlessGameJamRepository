@@ -18,14 +18,14 @@ public class BaseP : MonoBehaviour
     {
         hbar = GameObject.Find("LevelManager").GetComponent<Hbar>(); //Finds the HealthBar Script
 
-        if(PlayerPrefs.GetInt("Health") < 100) //This is checking to see what the player health is set to (You can increase it with upgrades)
+        if(PlayerPrefs.GetInt("MaxHealth") < 100) //This is checking to see what the player health is set to (You can increase it with upgrades)
         {
-            PlayerPrefs.SetInt("Health", 100); //if the health is not default or higher than default it is set back to default
-            maxHealth = PlayerPrefs.GetInt("Health"); //gets the current maxhealth variable that is stores in a file
+            PlayerPrefs.SetInt("MaxHealth", 100); //if the health is not default or higher than default it is set back to default
+            maxHealth = PlayerPrefs.GetInt("MaxHealth") + PlayerPrefs.GetInt("Health"); //gets the current maxhealth variable that is stores in a file
         }
         else
         {
-            maxHealth = PlayerPrefs.GetInt("Health"); //if value is greater than 100, then it recieves said value from file.
+            maxHealth = PlayerPrefs.GetInt("MaxHealth") + PlayerPrefs.GetInt("Health"); //if value is greater than 100, then it recieves said value from file.
         }
 
         health = maxHealth; //sets game health to max health

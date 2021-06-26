@@ -13,7 +13,6 @@ public class SwitchButton : MonoBehaviour
     void Start()
     {
         me = gameObject.GetComponent<Button>();
-        me.onClick.AddListener(Clicked);
     }
 
     // Update is called once per frame
@@ -22,7 +21,7 @@ public class SwitchButton : MonoBehaviour
         
     }
 
-    private void Clicked()
+    public void Clicked()
     {
         GameObject.Find("Canvas").GetComponent<Switch>().MODE = Type;
 

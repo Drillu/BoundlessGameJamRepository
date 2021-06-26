@@ -33,7 +33,7 @@ public class EnemyMovement : MonoBehaviour
         if (TYPE == 0) //Shooter - shoots bullets
         {
             isMoving = true;
-            End = Random.Range(2.5f, 8f);
+            End = Random.Range(2.5f, 6f);
         }
         else if (TYPE == 1) //Looper - Explodes on impact
         {
@@ -42,12 +42,13 @@ public class EnemyMovement : MonoBehaviour
         }
         else if (TYPE == 2) //Kamikaze - Moves Speratically for 10 seconds then RUSHES Player
         {
-
+            isMoving = true;
+            End = Random.Range(2.5f, 6f);
         }
         else if(TYPE==3) // Leecher
         {
             isMoving = true;
-            End = Random.Range(-15f, -11f);
+            End = Random.Range(2.5f, 6f);
         }
         
         healthScr = gameObject.GetComponent<EnemyHealth>();
@@ -79,7 +80,19 @@ public class EnemyMovement : MonoBehaviour
                 //StartCoroutine(Loop());
                 StartCoroutine(Boom());
             }
-            
+            else if (TYPE == 2 && isHover == false)
+            {
+                isShooting = true;
+                StartCoroutine(Hover());
+                StartCoroutine(Shoot3());
+            }
+            else if (TYPE == 3 && isHover == false)
+            {
+                isShooting = true;
+                StartCoroutine(Hover());
+                StartCoroutine(Shoot2());
+            }
+
         }
     }
 
@@ -91,10 +104,7 @@ public class EnemyMovement : MonoBehaviour
 
             rb.AddForce(Vector2.left / 2f);
         }
-        else if (TYPE == 3 && isMoving == false)
-        {
-            rb.MovePosition(Vector2.Lerp(transform.position, lerpGO.transform.position, lerpValue));
-        }
+        
     }
 
 
@@ -135,13 +145,7 @@ public class EnemyMovement : MonoBehaviour
                 StartCoroutine(Boom());
             }
         }
-        if(other.tag == "Player"&&TYPE == 3)
-        {
-            isMoving = false;
-            //rb.velocity = Vector2.zero;
-            lerpGO = GameObject.Find("Player");
-            
-        }
+        
     }
 
     private IEnumerator Boom()
@@ -158,5 +162,23 @@ public class EnemyMovement : MonoBehaviour
 
         Instantiate(Instances[1], gameObject.transform.GetChild(1).transform.position, transform.rotation);
         StartCoroutine(Shoot());
+    }
+
+    private IEnumerator Shoot2()
+    {
+        yield return new WaitForSeconds(3f);
+
+        Instantiate(Instances[1], gameObject.transform.GetChild(1).transform.position, transform.rotation);
+        StartCoroutine(Shoot2());
+    }
+
+    private IEnumerator Shoot3()
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        Instantiate(Instances[1], new Vector3 (gameObject.transform.GetChild(1).transform.position.x, gameObject.transform.GetChild(1).transform.position.y, gameObject.transform.GetChild(1).transform.position.z), transform.rotation);
+        Instantiate(Instances[1], new Vector3(gameObject.transform.GetChild(1).transform.position.x, gameObject.transform.GetChild(1).transform.position.y + .5f, gameObject.transform.GetChild(1).transform.position.z), transform.rotation) ;
+        Instantiate(Instances[1], new Vector3(gameObject.transform.GetChild(1).transform.position.x, gameObject.transform.GetChild(1).transform.position.y - .5f, gameObject.transform.GetChild(1).transform.position.z), transform.rotation);
+        StartCoroutine(Shoot3());
     }
 }

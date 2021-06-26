@@ -29,14 +29,14 @@ public class btn : MonoBehaviour
         me = gameObject.GetComponent<Button>();
 
         
-        if(tag == "Lockable")
-        {
-            PlayerPrefs.SetInt(gameObject.name, 0);
-        }
-        else
-        {
-            PlayerPrefs.SetInt(gameObject.name, 1);
-        }
+        //if(tag == "Lockable")
+        //{
+        //    PlayerPrefs.SetInt(gameObject.name, 0);
+        //}
+        //else
+        //{
+        //    PlayerPrefs.SetInt(gameObject.name, 1);
+        //}
 
         
         if (PlayerPrefs.GetInt(gameObject.name) > LevelCap + 1 | (PlayerPrefs.GetInt(gameObject.name) <= 0))
@@ -67,14 +67,14 @@ public class btn : MonoBehaviour
         {
             Level = PlayerPrefs.GetInt(gameObject.name);
         }
-
-        me.onClick.AddListener(buymenu);
     }
 
     // Update is called once per frame
     void Update()
     {
         Level = PlayerPrefs.GetInt(gameObject.name);
+
+        
     }
 
     public void buymenu()
@@ -109,7 +109,7 @@ public class btn : MonoBehaviour
     {
         Debug.Log("yeet");
         transform.GetChild(0).GetComponent<Text>().text = "LOCKED  ";
-        me.interactable = false;
+        gameObject.SetActive(false);
 
         yield return new WaitForSeconds(.1f);
     }
@@ -119,7 +119,7 @@ public class btn : MonoBehaviour
         if (PlayerPrefs.GetInt(gameObject.name) <= 0)
         {
             transform.GetChild(0).GetComponent<Text>().text = lockedName;
-            me.interactable = true;
+            gameObject.SetActive(true);
             PlayerPrefs.SetInt(gameObject.name, 1);
             isLocked = false;
         }

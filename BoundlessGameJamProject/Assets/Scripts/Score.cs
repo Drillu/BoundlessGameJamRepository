@@ -27,15 +27,10 @@ public class Score : MonoBehaviour
     private void Update()
     {
         scoreText.text = scoreNumber.ToString("00000");
-        if(scoreNumber>=scoreNeededForBoss[currBossIndex])
-        {
-            spawnerReference.isBossTime = true;
-            spawnerReference.SpawnBoss(currBossIndex);
-            currBossIndex++;     
-        }
 
         if(pHlth.isDead == true)
         {
+
             pauseMenu.SetActive(true);
             if (set == false)
             {
@@ -50,7 +45,7 @@ public class Score : MonoBehaviour
         set = true;
 
         PlayerPrefs.SetInt("HighScore", scoreNumber);
-        PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + (scoreNumber / 10));
+        PlayerPrefs.SetInt("Currency", PlayerPrefs.GetInt("Currency") + (scoreNumber / 2));
 
         GameObject.Find("DeathScreen").GetComponent<DeathScript>().score = scoreNumber;
         StartCoroutine(GameObject.Find("DeathScreen").GetComponent<DeathScript>().Death());

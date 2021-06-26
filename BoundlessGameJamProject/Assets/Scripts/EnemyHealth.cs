@@ -86,4 +86,9 @@ public class EnemyHealth : MonoBehaviour
     {
         scoreReference.scoreNumber += scoreToGet;
     }
+    
+    public void des()
+    {
+        Destroy(gameObject);
+    }
 }

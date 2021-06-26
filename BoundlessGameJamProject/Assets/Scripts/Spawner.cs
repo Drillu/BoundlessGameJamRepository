@@ -30,8 +30,10 @@ public class Spawner : MonoBehaviour
             randY = Random.Range(-5f, 5f);
             whereToSpawn = new Vector2(randX, randY);
             i = Random.Range(0, 100);
-            if (i > 30) j = 0;
-            else if (i <= 30) j = 1;
+            if (i > 60) j = 0;
+            else if (i > 30) j = 1;
+            else if (i > 10) j = 2;
+            else j = 3;
 
             Instantiate(enemy[j], whereToSpawn, Quaternion.identity);
         }
@@ -40,14 +42,14 @@ public class Spawner : MonoBehaviour
     }
     public void SpawnBoss(int index)
     {
-        Instantiate(bosses[index], whereToSpawn, Quaternion.identity);
+        //Instantiate(bosses[index], whereToSpawn, Quaternion.identity);
     }
 
     private IEnumerator incr()
     {
         if(spawnRate > .6f)
         {
-            spawnRate -= .25f;
+            spawnRate -= .10f;
         }
         else
         {
